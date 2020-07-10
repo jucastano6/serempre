@@ -1,0 +1,47 @@
+<?php
+
+use Drupal\Core\Url;
+use Drupal\serempre\Controller\SerempreController;
+
+function serempre_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  switch ($form_id) {
+    case 'registrar_form':
+      $form['#attached']['library'][] = 'serempre/serempreJS';
+      break;
+
+    case 'user_login_form':
+      $form['#submit'][] = 'submit_register_event';
+      break;
+    
+    default:      
+      break;
+  }
+  
+}
+
+function serempre_theme($existing, $type, $theme, $path) {
+  return [
+    'modal-resultados' => [
+      'variables' => ['mensaje' => ""],
+    ],
+  ];
+}
+/**
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function submit_register_event(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+	$serempre = new SerempreController();
+	$serempre->eventRegister('login', \Drupal::currentUser()->id());	  
+ }
+
+
+function serempre_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+	if ($entity->bundle() == "user") {
+		$serempre = new SerempreController();
+		$serempre->eventRegister('registro',$entity->id());			
+	}
+}
+?>

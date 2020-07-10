@@ -1,0 +1,8 @@
+name: 'Serempre'
+type: module
+description: 'Modulo custom realizado para prueba técnica Serempre'
+package: 'serempre'
+core: 8.x
+configure: serempre.config
+version: '1'
+datestamp: 1583380207

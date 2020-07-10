@@ -1,0 +1,36 @@
+serempre.config:
+  path: '/admin/serempre/config'
+  defaults:
+    _form: '\Drupal\serempre\Form\ConfigForm'
+    _title: 'Configuración Serempre'
+  requirements:
+    _permission: 'configurar serempre'
+serempre.config.registrar:
+  path: '/usuario/registro'
+  defaults:
+    _form: '\Drupal\serempre\Form\RegisterForm'
+    _title: 'Registrar Usuario'
+  requirements:
+    _permission: 'registrar usuario'
+serempre.config.consultar:
+  path: '/usuario/consulta'
+  defaults:
+    _controller: '\Drupal\serempre\Controller\SerempreController::usersListPagination'
+    _title: 'Listado de usuarios'
+  requirements:
+    _permission: 'access content'
+serempre.config.exportar:
+  path: '/usuario/consulta/excel'
+  defaults:
+    _controller: '\Drupal\serempre\Controller\SerempreController::downloadExcel'
+    _title: 'Descargar Excel'
+  requirements:
+    _permission: 'access content'
+serempre.config.importar:
+  path: '/usuario/importar'
+  defaults:
+    _form: '\Drupal\serempre\Form\ImportForm'
+    _title: 'Importar Usuarios'
+  requirements:
+    _permission: 'registrar usuario'
+  

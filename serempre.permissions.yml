@@ -1,0 +1,16 @@
+registrar usuarios:
+  title: 'Registrar Usuarios'
+  description: 'Permite realizar el registro de usuarios'
+  restrict access: true
+consultar usuarios:
+  title: 'Consultar Usuarios'
+  description: 'Permite realizar la consulta de usuarios registrados'
+  restrict access: true
+importar usuarios:
+  title: 'Importar Usuarios'
+  description: 'Permite realizar la importación de usuarios a através de un archivo CSV'
+  restrict access: true
+configurar serempre:
+  title: 'Configurar Serempre'
+  description: 'Permite ingresar a la configuración del módulo serempre'
+  restrict access: true

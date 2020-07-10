@@ -1,0 +1,24 @@
+serempre.menu_config:
+   title: 'Serempre'      
+   parent: system.admin   
+   route_name: serempre.config   
+serempre.menu_config.registrar:
+   title: 'Registrar Usuario'      
+   parent: serempre.menu_config   
+   route_name: serempre.config.registrar
+   weight: 1
+serempre.menu_config.consultar:
+   title: 'Consultar Usuarios'      
+   parent: serempre.menu_config   
+   route_name: serempre.config.consultar
+   weight: 2
+serempre.menu_config.importar:
+   title: 'Importar Usuarios'      
+   parent: serempre.menu_config   
+   route_name: serempre.config.importar
+   weight: 3
+serempre.menu_config.exportar:
+   title: 'Exportar Excel'      
+   parent: serempre.menu_config   
+   route_name: serempre.config.exportar
+   weight: 4
